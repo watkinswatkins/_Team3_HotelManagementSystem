@@ -20,11 +20,14 @@ public class LoginController {
 	@PostMapping("/users/login")
 	public Users checkLogin(@RequestBody Login login) throws AccessDeniedException {
 		
+		// Come back for role logins 
+		
 		Users u = userService.userLogin(login.getUsername(), login.getPassword());
 		
 		if(u == null) {
 			
 		throw new AccessDeniedException("403 returned");
+		
 		}
 		
 		return u;

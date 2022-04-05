@@ -3,6 +3,7 @@ package com.revature.p2.service;
 import java.util.List;
 
 import com.revature.p2.model.Users;
+import com.revature.p2.model.Users.pjob;
 
 public interface UsersService {
 	

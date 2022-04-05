@@ -8,10 +8,7 @@ public interface InmateService {
 	//list all inmate
 	public List<Inmate> findAll();
 	//find inmate by id
-	public static Inmate findById(int id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	public Inmate findById(int id);
 	//find change status pending
 	public List<Inmate> findPending();
 	//find change status denied
@@ -27,7 +24,9 @@ public interface InmateService {
 	//for warden to approve or deny prison sentence length changes
 	public Inmate updateChangeStatus(int id,int status);
 	
+	// Find all inmates under a specific BLOCK
+	public List<Inmate> findBlock(String block);
+	
+	
 
-	
-	
 }

@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.revature.p2.model.Users;
+import com.revature.p2.model.Users.pjob;
 import com.revature.p2.repo.UserRepository;
 
 @Service
@@ -17,7 +18,8 @@ public class UsersServiceImpl implements UsersService{
 	@Override
 	public Users userLogin(String username, String password) {
 		// TODO Auto-generated method stub
-		return userRepository.getUserByUsernameAndPassword(username,password);
+		return userRepository.getUserByUsernameAndPassword(username, password);
+		
 	}
 
 	@Override

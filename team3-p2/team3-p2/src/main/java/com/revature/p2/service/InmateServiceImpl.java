@@ -1,5 +1,6 @@
 package com.revature.p2.service;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -22,6 +23,7 @@ public class InmateServiceImpl implements InmateService {
 		// TODO Auto-generated method stub
 		return inmateRepository.findAll();
 	}
+	
 	///find inmates by id
 	//it had me remove @override after implement  InmateServiceImpl methods
 	public Inmate findById(int id) {
@@ -31,6 +33,7 @@ public class InmateServiceImpl implements InmateService {
 	//find by room number
 
 	}
+	
 	///find change status
 	@Override
 	public List<Inmate> findPending() {
@@ -39,7 +42,6 @@ public class InmateServiceImpl implements InmateService {
 	}
 	
 	public List<Inmate> findDenied() {
-		
 		
 		return inmateRepository.findByChangeStatus(2);
 	}
@@ -87,6 +89,7 @@ public class InmateServiceImpl implements InmateService {
 		
 		return i;
 	}
+	
 	@Override
 	public Inmate updateChangeStatus(int id, int status) {
 		// TODO Auto-generated method stub
@@ -102,4 +105,31 @@ public class InmateServiceImpl implements InmateService {
 		// TODO Auto-generated method stub
 		return null;
 	}
+	
+//	@Override
+//	public List<Inmate> findBlock(String block) {
+//		
+//		Inmate in = new Inmate();
+//		
+//		
+//		
+//		return null;
+//		
+//	}
+	
+//	// Displaying empty rooms 
+//	public List findEmpty(String block, int room, int id) {
+//		
+//		for (String blocks : block) {
+//			
+//			
+//			
+//		}
+//		
+//		
+//		
+//		return null;
+//		
+//	}
+//	
 }

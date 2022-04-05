@@ -8,6 +8,7 @@ public class Team3P2Application {
 
 	public static void main(String[] args) {
 		SpringApplication.run(Team3P2Application.class, args);
+		
 	}
 
 }
