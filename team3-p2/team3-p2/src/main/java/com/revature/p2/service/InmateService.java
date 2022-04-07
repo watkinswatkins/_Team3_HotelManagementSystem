@@ -20,9 +20,9 @@ public interface InmateService {
 	//find status changes by guard id
 	public List<Inmate> findByAuthor(int author);
 	//create an inmate
-	public Inmate createInmate(Inmate i);
+	public void createInmate(Inmate inmate);
 	//for warden to approve or deny prison sentence length changes
-	public Inmate updateChangeStatus(int id,int status);
+	public Inmate updateChangeStatus(int id, int status);
 	
 	// Find all inmates under a specific BLOCK
 	public List<Inmate> findBlock(String block);

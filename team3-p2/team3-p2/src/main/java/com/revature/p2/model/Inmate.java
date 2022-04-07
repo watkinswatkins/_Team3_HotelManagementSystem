@@ -20,8 +20,8 @@ public class Inmate {
 
 	public enum status {
 
-		LOW_RISK, HIGH_RISK
-
+		PENDING, APPROVED, DENIED
+		
 	}
 
 	// Blocks are in Block.java 
@@ -44,7 +44,7 @@ public class Inmate {
 	private int term;
 	private String charge;
 	private String notes;
-	private status role;
+	private status status;
 	private int author;
 	private int resolver;
 	
@@ -62,7 +62,7 @@ public class Inmate {
 		this.term = term;
 		this.charge = charge;
 		this.notes = notes;
-		this.role = role;
+		this.status = status;
 		this.author = author;
 		this.resolver = resolver;
 	}
