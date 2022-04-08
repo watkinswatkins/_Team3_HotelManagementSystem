@@ -1,5 +1,6 @@
 package com.revature.p2.model;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Date;
 
@@ -16,6 +17,7 @@ import lombok.Data;
 
 @Data
 @Entity
+@Table(name = "Inamte")
 public class Inmate {
 
 	public enum status {
@@ -23,24 +25,16 @@ public class Inmate {
 		PENDING, APPROVED, DENIED
 		
 	}
-
-	// Blocks are in Block.java 
 	
-//	public enum Block {
-//
-//		ONE, TWO, THREE, FOUR, FIVE, SIX
-//
-//	}
-
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 	private String fname;
 	private String lname;
 	private int room;
-//	private Block block;
-	private LocalDateTime startdate;
-	private LocalDateTime enddate;
+	private Block block;
+	private LocalDate startdate;
+	private LocalDate enddate;
 	private int term;
 	private String charge;
 	private String notes;
@@ -49,14 +43,14 @@ public class Inmate {
 	private int resolver;
 	
 	public Inmate(int id, String fname, String lname, int room,
-			/* Block block, */ LocalDateTime startdate,
-			LocalDateTime enddate, int term, String charge, String notes, status role, int author, int resolver) {
+			Block block, LocalDate startdate,
+			LocalDate enddate, int term, String charge, String notes, status role, int author, int resolver) {
 		super();
 		this.id = id;
 		this.fname = fname;
 		this.lname = lname;
 		this.room = room;
-//		this.block = block;
+		this.block = block;
 		this.startdate = startdate;
 		this.enddate = enddate;
 		this.term = term;

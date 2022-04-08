@@ -1,6 +1,12 @@
 package com.revature.p2.service;
 
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.text.SimpleDateFormat;
+import java.time.Duration;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.Period;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -11,8 +17,11 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import com.revature.p2.model.Block;
+import com.revature.p2.model.Block.block;
 import com.revature.p2.model.Inmate;
 import com.revature.p2.model.Inmate.status;
+import com.revature.p2.repo.BlockRepository;
 import com.revature.p2.repo.InmateRepository;
 import com.revature.p2.repo.Pending;
 
@@ -26,6 +35,11 @@ public class InmateServiceImpl implements InmateService {
 	@Autowired
 	@Qualifier(value = "pendingRepo")
 	Pending pendingRepo;
+	
+	@Autowired
+	@Qualifier(value = "blockRepository")
+	BlockRepository blockRepository;
+	
 	
 	Inmate inmate = new Inmate();
 
@@ -99,62 +113,49 @@ public class InmateServiceImpl implements InmateService {
 		Inmate newInmate = new Inmate();
 		
 		newInmate.setAuthor(inmate.getAuthor());
-		newInmate.setCharge(inmate.getCharge());
 		newInmate.setFname(inmate.getFname());
 		newInmate.setLname(inmate.getLname());
-		newInmate.setNotes(inmate.getNotes());
-		newInmate.setRoom(inmate.getRoom());
-		newInmate.setStartdate(LocalDateTime.now());		
-		newInmate.setEnddate(inmate.getEnddate());
 		
-		newInmate.setTerm(inmate.getTerm());
+		newInmate.setCharge(inmate.getCharge());
+		newInmate.setNotes(inmate.getNotes());
+		
+		newInmate.setBlock(inmate.getBlock());
+		newInmate.setRoom(inmate.getRoom());
+	
+		newInmate.setStartdate(LocalDate.now());		
+		newInmate.setEnddate(inmate.getEnddate());
+	
+		// Difference between start and end date for prison term
+		LocalDate start = newInmate.getStartdate();
+		LocalDate end = newInmate.getEnddate();
+		
+		Period period = Period.between(start, end);
+		
+		newInmate.setTerm(period.getYears());
 
 		
 		
 	}
 	
-	// Setting the author and resolver can be done in frontend
-	
-//	//find updates by which guard did them
-//	@Override
-//	public List<Inmate> findByAuthor(int author) {
-//		// TODO Auto-generated method stub
-//		return inmateRepository.findByAuthor(author);
-//	}
+	// Displaying empty rooms 
+	public List findEmpty() {
+		
+		
+		List<Block> rooms = blockRepository.findAll();
+		
+		for (Block room : rooms) {
+			
+			
+		}
+		
+		return null;
+			
+		}
 
+	@Override
+	public List<Inmate> findBlock(block block) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
-	// Done in Pending files
-//	@Override
-//	public Inmate updateChangeStatus(int id, int status) {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
-	
-	//  Stretch goal
-//	@Override
-//	public List<Inmate> findBlock(String block) {
-//		
-//		Inmate in = new Inmate();
-//		
-//		
-//		
-//		return null;
-//		
-//	}
-	
-//	// Displaying empty rooms 
-//	public List findEmpty(String block, int room, int id) {
-//		
-//		for (String blocks : block) {
-//			
-//			
-//			
-//		}
-//		
-//		
-//		
-//		return null;
-//		
-//	}
-//	
 }
