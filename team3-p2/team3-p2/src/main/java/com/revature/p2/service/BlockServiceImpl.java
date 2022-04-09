@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import com.revature.p2.model.Block;
+import com.revature.p2.model.Block.block;
 import com.revature.p2.repo.BlockRepository;
 
 @Service
@@ -28,11 +29,11 @@ public class BlockServiceImpl implements BlockService{
 		
 		for (Block room : rooms) {
 			
-			int roomFull = room.getInmateId();
+			Integer roomFull = room.getInmateId();
 			
-			int nul = (Integer) null;
-			
-			if(roomFull == nul) {
+//			int nul = (Integer) null;
+//			
+			if(roomFull.equals(null)) {
 				
 				roomEmpty.add(room);
 				
@@ -43,5 +44,25 @@ public class BlockServiceImpl implements BlockService{
 		return roomEmpty;
 			
 		}
+	
+	public List findBlock(block block) {
+		
+		List<Block> blocks = blockRepository.findAll();
+		
+		List<Block> allInmates = new ArrayList<Block>();
+		
+		for (Block b : blocks) {
+			
+			if (b.equals(block)) {
+				
+				allInmates.add(b);
+				
+			}
+			
+		}
+		
+		return allInmates;
+		
+	}
 
 }

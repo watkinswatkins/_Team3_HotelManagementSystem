@@ -17,7 +17,7 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "Inamte")
+@Table(name = "Inmate")
 public class Inmate {
 
 	public enum status {
