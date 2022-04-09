@@ -25,8 +25,8 @@ public interface InmateService {
 	//for warden to approve or deny prison sentence length changes
 	//public Inmate updateChangeStatus(int id, int status);
 	
-	// Find all inmates under a specific BLOCK
-	public List<Inmate> findBlock(block block);
+//	// Find all inmates under a specific BLOCK
+//	public List<Inmate> findBlock(block block);
 	
 	
 

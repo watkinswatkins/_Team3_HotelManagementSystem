@@ -25,6 +25,7 @@ public class Block {
 	public Block block;
 	public int inmateId;
 	
+	
 	public Block(int room, Block block, int inmateId) {
 		super();
 		this.room = room;
@@ -36,7 +37,5 @@ public class Block {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	
-	
-	
+
 }

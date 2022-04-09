@@ -110,52 +110,22 @@ public class InmateServiceImpl implements InmateService {
 	public void createInmate(Inmate inmate) {
 		// TODO Auto-generated method stub
 		
-		Inmate newInmate = new Inmate();
-		
-		newInmate.setAuthor(inmate.getAuthor());
-		newInmate.setFname(inmate.getFname());
-		newInmate.setLname(inmate.getLname());
-		
-		newInmate.setCharge(inmate.getCharge());
-		newInmate.setNotes(inmate.getNotes());
-		
-		newInmate.setBlock(inmate.getBlock());
-		newInmate.setRoom(inmate.getRoom());
-	
-		newInmate.setStartdate(LocalDate.now());		
-		newInmate.setEnddate(inmate.getEnddate());
+		/*
+		 * Start date is automatic End date is chosen in the front
+		 */
+		inmate.setStartdate(LocalDate.now());		
+		inmate.setEnddate(inmate.getEnddate());
 	
 		// Difference between start and end date for prison term
-		LocalDate start = newInmate.getStartdate();
-		LocalDate end = newInmate.getEnddate();
+		LocalDate start = inmate.getStartdate();
+		LocalDate end = inmate.getEnddate();
 		
 		Period period = Period.between(start, end);
 		
-		newInmate.setTerm(period.getYears());
+		inmate.setTerm(period.getYears());
+		
+		inmateRepository.save(inmate);
 
-		
-		
 	}
 	
-	// Displaying empty rooms 
-	public List findEmpty() {
-		
-		
-		List<Block> rooms = blockRepository.findAll();
-		
-		for (Block room : rooms) {
-			
-			
-		}
-		
-		return null;
-			
-		}
-
-	@Override
-	public List<Inmate> findBlock(block block) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 }

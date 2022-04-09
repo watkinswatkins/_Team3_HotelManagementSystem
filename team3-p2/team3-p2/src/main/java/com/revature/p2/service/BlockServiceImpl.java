@@ -53,7 +53,7 @@ public class BlockServiceImpl implements BlockService{
 		
 		for (Block b : blocks) {
 			
-			if (b.equals(block)) {
+			if (b.getBlock().equals(block)) {
 				
 				allInmates.add(b);
 				
