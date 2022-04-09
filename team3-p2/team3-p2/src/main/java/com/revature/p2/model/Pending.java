@@ -2,13 +2,18 @@ package com.revature.p2.model;
 
 import java.time.LocalDate;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 import com.revature.p2.model.Inmate.status;
+import com.revature.p2.model.Block.block;
+
 
 import lombok.Data;
 
@@ -29,21 +34,35 @@ public class Pending {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "id")
 	private int id;
+	@Column(name = "fname")
 	private String fname;
+	@Column(name = "lname")
 	private String lname;
+	@Column(name = "room")
 	private int room;
-	private Block block;
+	@Enumerated(EnumType.STRING)
+	@Column(name = "block")
+	private block block;
+	@Column(name = "startdate")
 	private LocalDate startdate;
+	@Column(name = "enddate")
 	private LocalDate enddate;
+	@Column(name = "term")
 	private int term;
+	@Column(name = "charge")
 	private String charge;
+	@Column(name = "notes")
 	private String notes;
+	@Column(name = "status")
 	private status status;
+	@Column(name = "author")
 	private int author;
+	@Column(name = "resolver")
 	private int resolver;
 
-	public Pending(int id, String fname, String lname, int room, Block block, LocalDate startdate, LocalDate enddate,
+	public Pending(int id, String fname, String lname, int room, block block, LocalDate startdate, LocalDate enddate,
 			int term, String charge, String notes, com.revature.p2.model.Inmate.status status, int author,
 			int resolver) {
 		super();

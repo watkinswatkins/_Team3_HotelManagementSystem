@@ -3,6 +3,7 @@ package com.revature.p2.controller;
 import java.nio.file.AccessDeniedException;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -12,6 +13,7 @@ import com.revature.p2.model.Users;
 import com.revature.p2.service.UsersService;
 
 @RestController
+@CrossOrigin(origins="http://localhost:8095")
 public class LoginController {
 
 	@Autowired

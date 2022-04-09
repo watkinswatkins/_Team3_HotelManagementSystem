@@ -13,7 +13,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name="image")
+@Table(name = "image")
 @Data
 @Builder
 @NoArgsConstructor
@@ -21,15 +21,14 @@ import lombok.NoArgsConstructor;
 public class Image {
 
 	@Id
-	@Column(name="id")
+	@Column(name = "id")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	@Column(name="name")
+	@Column(name = "name")
 	private String name;
-	@Column(name="type")
+	@Column(name = "type")
 	private String type;
-	@Column(name="image", unique = false, nullable = false, length = 100000) 
+	@Column(name = "image", unique = false, nullable = false, length = 100000)
 	private byte[] image;
-	
-	
+
 }
