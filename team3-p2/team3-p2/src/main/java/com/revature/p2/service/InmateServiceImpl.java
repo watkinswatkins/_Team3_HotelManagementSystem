@@ -21,9 +21,10 @@ import com.revature.p2.model.Block;
 import com.revature.p2.model.Block.block;
 import com.revature.p2.model.Inmate;
 import com.revature.p2.model.Inmate.status;
+import com.revature.p2.model.Pending;
 import com.revature.p2.repo.BlockRepository;
 import com.revature.p2.repo.InmateRepository;
-import com.revature.p2.repo.Pending;
+import com.revature.p2.repo.PendingRepository;
 
 @Service
 public class InmateServiceImpl implements InmateService {
@@ -34,7 +35,7 @@ public class InmateServiceImpl implements InmateService {
 	
 	@Autowired
 	@Qualifier(value = "pendingRepo")
-	Pending pendingRepo;
+	PendingRepository pendingRepo;
 	
 	@Autowired
 	@Qualifier(value = "blockRepository")
@@ -53,6 +54,7 @@ public class InmateServiceImpl implements InmateService {
 	
 	///find inmates by id
 	//it had me remove @override after implement  InmateServiceImpl methods
+	@Override
 	public Inmate findById(int id) {
 		// TODO Auto-generated method stub
 		
@@ -61,30 +63,52 @@ public class InmateServiceImpl implements InmateService {
 	}
 	
 	//find by room number
+	@Override
 	public Inmate findByRoom(int room) {
 		
 		return inmateRepository.findByRoom(room);
 		
 	}
 	
-	///find change status
-	@Override
-	public List<Inmate> findPending() {
-		// TODO Auto-generated method stub
-		return inmateRepository.findByChangeStatus(inmate.getStatus().PENDING);
-	}
+//	///find change status
+//	@Override
+//	public List<Inmate> findPending() {
+//		// TODO Auto-generated method stub
+//		return inmateRepository.findByChangeStatus(inmate.getStatus().PENDING);
+//	}
+//	@Override
+//	public List<Inmate> findDenied() {
+//		
+//		return inmateRepository.findByChangeStatus(inmate.getStatus().DENIED);
+//	}
+//
+//	@Override
+//	public List<Inmate> findApproved() {
+//		// TODO Auto-generated method stub
+//		return inmateRepository.findByChangeStatus(inmate.getStatus().APPROVED);
+//	}
 	
-	public List<Inmate> findDenied() {
+	public List<Inmate> findStatus(status status){ 
 		
-		return inmateRepository.findByChangeStatus(inmate.getStatus().DENIED);
+		switch (status) {
+		
+		case PENDING :
+			
+			return inmateRepository.findByChangeStatus(status);
+		
+		case DENIED: 
+			
+			return inmateRepository.findByChangeStatus(status);
+			
+		case APPROVED: 
+			
+			return inmateRepository.findByChangeStatus(status);
+			
+		
+		}
+		
+		return null;
 	}
-
-	@Override
-	public List<Inmate> findApproved() {
-		// TODO Auto-generated method stub
-		return inmateRepository.findByChangeStatus(inmate.getStatus().APPROVED);
-	}
-	
 	
 	
 	
@@ -92,22 +116,28 @@ public class InmateServiceImpl implements InmateService {
 	// This is going to save the new info and store it in the Pending DB 
 	// You can show old inmate and new inmate to decide if you want to approve or deny update
 	// Everything besides ID can be changed and added if you need them
-
-	public void updateInmateStatus(int id, Inmate inmate) {
+	@Override
+	public Inmate updateInmateStatus(int id, Inmate inmate) {
 		
 		//inmate = findById(id);
 		if (inmate != null) {
 			
+			Pending pending = new Pending();
+			
+			pending.equals(inmate);
+			
 			// Sets the changes to PENDING and sends it to the pendingRepo for approval
 			inmate.setStatus(status.PENDING);
-			pendingRepo.save(inmate);
+			pendingRepo.save(pending);
 		
 		}
+		
+		return null;
 		
 	}
 	
 	@Override
-	public void createInmate(Inmate inmate) {
+	public Inmate createInmate(Inmate inmate) {
 		// TODO Auto-generated method stub
 		
 		/*
@@ -124,7 +154,7 @@ public class InmateServiceImpl implements InmateService {
 		
 		inmate.setTerm(period.getYears());
 		
-		inmateRepository.save(inmate);
+		return inmateRepository.save(inmate);
 
 	}
 	

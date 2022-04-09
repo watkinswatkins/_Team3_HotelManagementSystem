@@ -31,7 +31,7 @@ public class UsersServiceImpl implements UsersService{
 	@Override
 	public Users viewUser(String username) {
 		// TODO Auto-generated method stub
-		return userRepository.getUserByUsername(username);
+		return userRepository.viewUser(username);
 	}
 
 	@Override

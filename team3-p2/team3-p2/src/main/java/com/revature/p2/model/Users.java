@@ -13,6 +13,7 @@ import lombok.Data;
 
 @Data
 @Entity
+@Table(name="Users")
 public class Users {
 
 	public enum pjob {

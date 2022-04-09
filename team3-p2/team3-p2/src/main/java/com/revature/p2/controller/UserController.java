@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.revature.p2.model.Users;
@@ -24,20 +25,39 @@ import com.revature.p2.service.UsersService;
 public class UserController {
 	@Autowired
 	UsersService userService;
-
-	@GetMapping("/users")
-	public List<Users> getUsers() {
-		return userService.findAll();
+	
+	@GetMapping("/login")
+	public Users userLogin(String username, String password) {
+		
+		
+		return userService.userLogin(username, password);
+		
+	}
+	
+	@GetMapping("/logout")
+	public Users userLogout() {
+		
+		return userService.userLogout();
+		
 	}
 
 	@GetMapping("/users/{username}")
-	public Users getUserByUsername(@PathVariable String username) {
+	public Users viewUser(@RequestParam("username") String username) {
 		return userService.viewUser(username);
 	}
+
 
 	@PutMapping("/users")
 	public Users updateUser(@RequestBody Users u) {
 
 		return userService.updateUser(u.getId(), u);
 	}
+	
+	@GetMapping("/allUsers")
+	public List<Users> findAll() {
+		
+		return userService.findAll();
+		
+	}
+	
 }

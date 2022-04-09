@@ -28,7 +28,7 @@ public class Image {
 	private String name;
 	@Column(name="type")
 	private String type;
-	@Column(name="iamge", unique = false, nullable = false, length = 100000) 
+	@Column(name="image", unique = false, nullable = false, length = 100000) 
 	private byte[] image;
 	
 	

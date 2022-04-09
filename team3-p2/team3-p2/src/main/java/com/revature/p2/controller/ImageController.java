@@ -29,6 +29,7 @@ public class ImageController {
 
       imageRepository.save(Image.builder()
               .name(file.getOriginalFilename())
+              .type(file.getContentType())
               .image(ImageService.compressImage(file.getBytes())).build());
       return ResponseEntity.status(HttpStatus.OK)
               .body(new ImageUploadResponse("Image uploaded successfully: " +

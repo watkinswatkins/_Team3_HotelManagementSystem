@@ -10,7 +10,10 @@ import com.revature.p2.model.Users;
 public interface UserRepository extends JpaRepository<Users, Integer> {
 	
 	public Users getUserByUsernameAndPassword(String username,String password);
+	public Users userLogout();
+	public Users viewUser(String username);
+	public Users updateUser(int id, Users users);
 	
-	public Users getUserByUsername(String username);
-
+//	public Users getUserByUsername(String username);
+	
 }

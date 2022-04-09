@@ -8,26 +8,29 @@ import org.springframework.stereotype.Service;
 
 import com.revature.p2.model.Inmate;
 import com.revature.p2.model.Inmate.status;
+import com.revature.p2.model.Pending;
 import com.revature.p2.repo.InmateRepository;
-import com.revature.p2.repo.Pending;
+import com.revature.p2.repo.PendingRepository;
 
 @Service
 public class PendingServiceImpl implements PendingService {
 
 	@Autowired
 	@Qualifier(value = "pendingRepository")
-	Pending pendingRepository;
+	PendingRepository pendingRepository;
 	
 	@Autowired
 	@Qualifier(value = "inmateRepository")
 	InmateRepository inmateRepository;
 	
+	@Override
 	public List<Pending> findByStatus(status status) {
 		
 		return pendingRepository.findByStatus(status);
 		
 	}
 	
+	@Override
 	public List<Pending> findAllStatus() {
 		
 		return pendingRepository.findAllStatus();
@@ -37,9 +40,10 @@ public class PendingServiceImpl implements PendingService {
 	// The approval update
 	// Once approved, it overwrites the inmateRepository with proposed changes
 	
-	public void updateChanges (int id, Inmate inmate) {
+	@Override
+	public Inmate updateChanges (int id, Inmate inmate) {
 		
-		inmateRepository.save(inmate);
+		return inmateRepository.save(inmate);
 		
 	}
 	
