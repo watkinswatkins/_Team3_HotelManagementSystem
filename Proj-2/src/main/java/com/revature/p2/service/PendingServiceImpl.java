@@ -103,4 +103,11 @@ public List<Pending> findStatus(status status) {
 		
 	//	return null;	
 	
-}}
+}
+public Pending addPending(Pending pending) {
+	
+	return pendingService.save(pending);
+	
+}
+
+}
