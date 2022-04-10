@@ -40,9 +40,9 @@ public List<Pending> findStatus(@RequestParam status status){
 	return pendingServiceImpl.findStatus(status);
 }
 
-@PostMapping
+@PostMapping("/addPending")
 public Pending addPending(Pending pending) {
-	return pendingServiceImpl.addPending(pending);
+	return pendingRepository.save(pending);
 	
 }
 }
