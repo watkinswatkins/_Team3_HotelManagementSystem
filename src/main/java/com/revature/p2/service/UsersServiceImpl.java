@@ -6,44 +6,29 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.revature.p2.model.Users;
-import com.revature.p2.model.Users.pjob;
-import com.revature.p2.repo.UserRepository;
+import com.revature.p2.repository.UsersRepository;
 
 @Service
-public class UsersServiceImpl implements UsersService{
+public class UsersServiceImpl {
 	
-	@Autowired
-	UserRepository userRepository;
-
-	@Override
-	public Users userLogin(String username, String password) {
-		// TODO Auto-generated method stub
-		return userRepository.getUserByUsernameAndPassword(username, password);
+	private UsersRepository usersService;
+	
+//	public UsersServiceImpl(UsersRepository usersService) {
+//		
+//		this.usersService = usersService;
+//		
+//	}
+	
+	public List<Users> findAll() {
+		
+		return usersService.findAll();
+	}
+	
+	public Users createUser(Users user) {
+		
+		return usersService.save(user);
 		
 	}
 
-	@Override
-	public Users userLogout() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Users viewUser(String username) {
-		// TODO Auto-generated method stub
-		return userRepository.viewUser(username);
-	}
-
-	@Override
-	public Users updateUser(int id, Users user) {
-		// TODO Auto-generated method stub
-		return userRepository.save(user);
-	}
-
-	@Override
-	public List<Users> findAll() {
-		// TODO Auto-generated method stub
-		return userRepository.findAll();
-	}
 
 }
