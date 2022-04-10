@@ -23,10 +23,10 @@ public class Block {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int room;
-	private block block_number;
-	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name="room")
-	private int roomId;
+	private int id;
+	private block blockNumber;
+	//@OneToOne
+	//@JoinColumn(name="roomId")
+	private Inmates roomId;
 	
 }
