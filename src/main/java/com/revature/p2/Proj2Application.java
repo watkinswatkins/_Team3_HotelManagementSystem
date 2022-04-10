@@ -10,7 +10,6 @@ import org.springframework.context.annotation.Bean;
 
 import com.revature.p2.model.Users;
 import com.revature.p2.repository.UsersRepository;
-import com.revature.p2.service.UsersService;
 
 @SpringBootApplication
 public class Proj2Application {
@@ -31,6 +30,8 @@ public class Proj2Application {
 
 				user.setUsername(username);
 				user.setPassword("TestPass");
+				user.setFirstName(username);
+				user.setLastName("LastName");
 				usersRepository.save(user);
 
 			});

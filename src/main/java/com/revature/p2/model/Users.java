@@ -17,19 +17,23 @@ public class Users {
 	private Integer id;
 	private String username;
 	private String password;
+	private String firstName;
+	private String lastName;
 	private Role role;
-
-	public Users(Integer id, String username, String password, Role role) {
-		super();
-		this.id = id;
-		this.username = username;
-		this.password = password;
-		this.role = role;
-	}
 
 	public Users() {
 		super();
 		// TODO Auto-generated constructor stub
+	}
+
+	public Users(Integer id, String username, String password, String firstName, String lastName, Role role) {
+		super();
+		this.id = id;
+		this.username = username;
+		this.password = password;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.role = role;
 	}
 
 }

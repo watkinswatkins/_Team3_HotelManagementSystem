@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.revature.p2.model.Users;
 import com.revature.p2.repository.UsersRepository;
-import com.revature.p2.service.UsersService;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")
