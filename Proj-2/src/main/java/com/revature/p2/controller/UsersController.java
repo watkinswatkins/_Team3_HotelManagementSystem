@@ -26,7 +26,7 @@ public class UsersController {
 		
 	}
 	
-	@PostMapping("/users")
+	@PostMapping("/addUser")
 	void addUser(@RequestBody Users user) {
 		
 		usersRepository.save(user);

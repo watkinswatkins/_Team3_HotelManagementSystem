@@ -9,6 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
 import com.revature.p2.model.Users;
+import com.revature.p2.repository.InmatesRepository;
 import com.revature.p2.repository.UsersRepository;
 
 @SpringBootApplication
@@ -41,4 +42,14 @@ public class Proj2Application {
 		};
 
 	}
+	
+//	@Bean
+//	CommandLineRunner init(InmatesRepository inmatesRepository) {
+//		
+//		return args -> { 
+//			
+//			Stream.of("Inmate1", "Inmate2", "Inmate3").
+//		}
+//		
+//	}
 }

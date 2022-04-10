@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.revature.p2.model.Block;
+import com.revature.p2.model.Block.block;
 import com.revature.p2.service.BlockServiceImpl;
 
 @RestController

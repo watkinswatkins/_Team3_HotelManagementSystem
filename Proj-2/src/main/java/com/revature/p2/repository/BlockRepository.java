@@ -6,10 +6,11 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import com.revature.p2.model.Block;
+import com.revature.p2.model.Block.block;
 
 @Repository
 public interface BlockRepository extends JpaRepository<Block, Integer> {
 
-	public List<Block> findByBlock(Block block);
+	//public List<block> findByBlock(block block);
 	
 }
