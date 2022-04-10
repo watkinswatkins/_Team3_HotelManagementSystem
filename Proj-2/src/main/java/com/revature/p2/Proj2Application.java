@@ -23,31 +23,31 @@ public class Proj2Application {
 
 	}
 
-//	@Bean
-//	CommandLineRunner init(UsersRepository usersRepository) {
-//
-//		return args -> {
-//
-//			Stream.of("Test1", "Test2", "Test3").forEach(username -> {
-//
-//				Users user = new Users();
-//
-//				user.setUsername(username);
-//				user.setPassword("TestPass");
-//				user.setFirstName(username);
-//				user.setLastName("LastName");
-//				usersRepository.save(user);
-//
-//			});
-//
-//			usersRepository.findAll().forEach(System.out::println);
-//			
-//		};
-//
-//	}
+	@Bean
+	CommandLineRunner init(UsersRepository usersRepository) {
+
+		return args -> {
+
+			Stream.of("Test1", "Test2", "Test3").forEach(username -> {
+
+				Users user = new Users();
+
+				user.setUsername(username);
+				user.setPassword("TestPass");
+				user.setFirstName(username);
+				user.setLastName("LastName");
+				usersRepository.save(user);
+
+			});
+
+			usersRepository.findAll().forEach(System.out::println);
+			
+		};
+
+	}
 	
 	@Bean
-	CommandLineRunner init(InmatesRepository inmatesRepository) {
+	CommandLineRunner init1(InmatesRepository inmatesRepository) {
 		
 		return args -> { 
 			
