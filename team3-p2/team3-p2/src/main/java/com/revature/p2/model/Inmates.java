@@ -6,27 +6,33 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
+
+import org.hibernate.annotations.ManyToAny;
 
 import lombok.Data;
 
 @Data
 @Entity
-public class Block {
+public class Inmates {
 
-	public enum block {
-	
-	ONE, TWO, THREE, FOUR, FIVE, SIX
-	
+	public enum status {
+		
+		PENDING, APPROVED, DENIED
+
 	}
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int room;
-	private block block_number;
+	private int id;
 	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name="room")
-	private int roomId;
+	@JoinColumn(name = "roomId")
+	private Block room;
+	private String firstName;
+	private String lastName;
+	private String charge;
+	private String notes;
+	private status status;
 	
 }
