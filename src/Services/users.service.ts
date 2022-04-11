@@ -10,6 +10,10 @@ const baseUrl = 'http://localhost:4200/users';
   providedIn: 'root'
 })
 export class UsersService {
+  user?: User;
+  login(username: string, password: string) {
+    throw new Error('Method not implemented.');
+  }
 
   constructor(
     private https: HttpClient,
