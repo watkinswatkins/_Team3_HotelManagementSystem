@@ -1,0 +1,142 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: rgb(93,93,93);
+  background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(93,93,93,1) 100%);;
+}
+
+h1 { color: #ffffff; font-family: 'Georgia',sans-serif; font-size: 62px; font-weight: 800; line-height: 72px; margin: 0 0 24px; text-align: center; text-transform: uppercase; }
+
+
+h2 { color: #ffffff; font-family: 'Georgia',sans-serif; font-size: 30px; font-weight: 800; line-height: 36px; margin: 0 0 24px; text-align: center; }
+
+
+h3 { color: #ffffff; font-family: 'Georgia',sans-serif; font-size: 30px; font-weight: 800; line-height: 36px; margin: 0 0 24px; text-align: center; }
+
+
+h4 { color: #ffffff; font-family: 'Georgia',sans-serif; font-size: 30px; font-weight: 800; line-height: 36px; margin: 0 0 24px; text-align: center; }
+
+
+h5 { color: #ffffff; font-family: 'Georgia',sans-serif; font-size: 30px; font-weight: 800; line-height: 36px; margin: 0 0 24px; text-align: center; }
+
+
+h6 { color: #ffffff; font-family: 'Georgia',sans-serif; font-size: 30px; font-weight: 800; line-height: 36px; margin: 0 0 24px; text-align: center; }
+
+
+p { color: #f8f8f8; font-family: 'Georgia',sans-serif; font-size: 18px; font-weight: 500; line-height: 32px; margin: 0 0 24px; }
+
+
+a { color: #c8c8c8; text-decoration: underline; }
+
+::selection {
+  /* Change highlight background color to black */
+  background: #ff5410;
+  /* Change highlight text color to red */
+  color: #ffffff;
+}
+
+/* Begins the button CSS */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.noselect {
+-webkit-touch-callout: none;
+  -webkit-user-select: none;
+   -khtml-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+      -webkit-tap-highlight-color: transparent;
+}
+
+button, button:before {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button {
+  width: 150px;
+  height: 50px;
+  cursor: pointer;
+  font-family: 'Play', sans-serif;
+  font-size: 20px;
+  color: rgb(0, 0, 0);
+  border: none;
+  border-radius: 25px;
+  background-image: url("");
+  background-size: 150%;
+  background-position: left;
+  transition: 1s;
+}
+
+button:before {
+  width: 150px;
+  height: 50px;
+  content: '';
+  text-emphasis-color: rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.1)    ;  
+  border-radius: 25px;
+  position: absolute;
+  transition: 500ms;
+}
+
+button:hover:before {
+  background: #ff5f1f5d; 
+  text-shadow: 1px 1px 1px black;
+}
+
+button:hover {
+  background-position: center;
+  box-shadow: 0px 0px 25px #FF5F1F;
+  font-size: 20px;
+  color: rgb(0, 0, 0);
+  content: '';
+}
+
+button:focus {
+  outline: none;
+}
+
+/*<link href="https://fonts.googleapis.com/css2?family=Play:wght@700&display=swap" rel="hazard.css">*/
+/*<link rel="stylesheet" type="text/css" href="orangeglow.css" >*/
+/*<button class="orangeglow"></button> */
+
+
+
+/* Add a gray background color to the top navigation */
+.topnav {
+  background-color: rgba(51, 51, 51, 0.61);
+  overflow: hidden;
+  position: sticky;
+  top: 0px;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #FF5F1F;
+  color: black;
+}
