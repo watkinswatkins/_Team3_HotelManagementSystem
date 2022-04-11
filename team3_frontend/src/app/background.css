@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background: rgb(93,93,93);
+    background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(93,93,93,1) 100%);;
+  }
+  
+  h1 { color: #ffffff; font-family: 'Georgia',sans-serif; font-size: 62px; font-weight: 800; line-height: 72px; margin: 0 0 24px; text-align: center; text-transform: uppercase; }
+  
+  
+  h2 { color: #ffffff; font-family: 'Georgia',sans-serif; font-size: 30px; font-weight: 800; line-height: 36px; margin: 0 0 24px; text-align: center; }
+  
+  
+  h3 { color: #ffffff; font-family: 'Georgia',sans-serif; font-size: 30px; font-weight: 800; line-height: 36px; margin: 0 0 24px; text-align: center; }
+  
+  
+  h4 { color: #ffffff; font-family: 'Georgia',sans-serif; font-size: 30px; font-weight: 800; line-height: 36px; margin: 0 0 24px; text-align: center; }
+  
+  
+  h5 { color: #ffffff; font-family: 'Georgia',sans-serif; font-size: 30px; font-weight: 800; line-height: 36px; margin: 0 0 24px; text-align: center; }
+  
+  
+  h6 { color: #ffffff; font-family: 'Georgia',sans-serif; font-size: 30px; font-weight: 800; line-height: 36px; margin: 0 0 24px; text-align: center; }
+  
+  
+  p { color: #f8f8f8; font-family: 'Georgia',sans-serif; font-size: 18px; font-weight: 500; line-height: 32px; margin: 0 0 24px; }
+  
+  
+  a { color: #c8c8c8; text-decoration: underline; }
+  
+  ::selection {
+    /* Change highlight background color to black */
+    background: #ff5410;
+    /* Change highlight text color to red */
+    color: #ffffff;
+  }
