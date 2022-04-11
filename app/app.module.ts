@@ -6,7 +6,7 @@ import { WardenLoginComponent } from './WardenLogin/warden-login/warden-login.co
 import { PendingBlockComponent } from './PendingBlock/pending-block/pending-block.component';
 import { PendingInmateComponent } from './PendingInmate/pending-inmate/pending-inmate.component';
 import { InmateComponent } from './Inmate/inmate/inmate.component';
-
+aa
 import { GuardComponent } from './guard/guard.component';
 import { HeaderComponent } from './header/header.component';
 import { WardenComponent } from './warden/warden.component';

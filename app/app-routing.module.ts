@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { GuardBlockComponent } from './guard/guard-block/guard-block.component';
 import { GuardInmateComponent } from './guard/guard-inmate/guard-inmate.component';
 import { GuardComponent } from './guard/guard.component';
-
+aa
 const routes: Routes = [
   {path: '', component: GuardComponent},
   {path: '', component: GuardBlockComponent},
