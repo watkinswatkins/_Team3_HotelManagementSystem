@@ -5,21 +5,23 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.revature.p2.model.Block;
-import com.revature.p2.model.Block.block;
+//import com.revature.p2.model.Block.block;
 import com.revature.p2.service.BlockServiceImpl;
 
 @RestController
-@CrossOrigin(origins = "https//localhost:8095")
+@CrossOrigin(origins = "https//localhost:4200")
 public class BlockController {
 
 	@Autowired
 	BlockServiceImpl blockService;
 	
-	@GetMapping("/block")
-	public List<Block> findByBlock(Block block) {
+	@GetMapping("/blocks/block/{block}")
+	public List<Block> findByBlock(String block) {
 		
 		return blockService.findByBlock(block);
 		

@@ -22,7 +22,7 @@ public class Inmates {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int id;
+	private Integer id;
 	private int roomId;
 	private String firstName;
 	private String lastName;
@@ -34,7 +34,7 @@ public class Inmates {
 	private int month;
 	private int years;
 
-	public Inmates(int id, int roomId, String firstName, String lastName, String charge, String notes,
+	public Inmates(Integer id, int roomId, String firstName, String lastName, String charge, String notes,
 			/*status status, */ LocalDate startDate, LocalDate endDate, int month, int years) {
 		super();
 		this.id = id;

@@ -13,11 +13,11 @@ import lombok.Data;
 @Data
 @Entity
 public class Pending {
-	public enum status {
-
-		PENDING, APPROVED, DENIED
-
-	}
+//	public enum status {
+//
+//		PENDING, APPROVED, DENIED
+//
+//	}
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
@@ -26,7 +26,7 @@ public class Pending {
     private String lastName;
     private String charge;
     private String notes;
-    private status status;
+    private String status;
     private LocalDate startDate;
     private LocalDate endDate;
     private int month;
@@ -34,7 +34,7 @@ public class Pending {
 
 
 public Pending(int id, int roomId, String firstName, String lastName, String charge, String notes,
-		status status, LocalDate startDate, LocalDate endDate, int month, int years) {
+		String status, LocalDate startDate, LocalDate endDate, int month, int years) {
 	super();
 	this.id = id;
 	this.roomId = roomId;

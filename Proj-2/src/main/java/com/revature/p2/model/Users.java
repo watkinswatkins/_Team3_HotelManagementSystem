@@ -19,14 +19,14 @@ public class Users {
 	private String password;
 	private String firstName;
 	private String lastName;
-	private Role role;
+	private String role;
 
 	public Users() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Users(Integer id, String username, String password, String firstName, String lastName, Role role) {
+	public Users(Integer id, String username, String password, String firstName, String lastName, String role) {
 		super();
 		this.id = id;
 		this.username = username;

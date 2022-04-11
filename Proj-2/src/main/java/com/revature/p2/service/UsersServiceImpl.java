@@ -11,6 +11,7 @@ import com.revature.p2.repository.UsersRepository;
 @Service
 public class UsersServiceImpl {
 	
+	@Autowired
 	private UsersRepository usersService;
 	
 //	public UsersServiceImpl(UsersRepository usersService) {

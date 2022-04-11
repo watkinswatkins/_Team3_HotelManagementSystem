@@ -11,26 +11,33 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.revature.p2.model.Users;
 import com.revature.p2.repository.UsersRepository;
+import com.revature.p2.service.UsersServiceImpl;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")
 public class UsersController {
 	
+//	@Autowired
+//	private UsersRepository usersRepository;
+
 	@Autowired
-	private UsersRepository usersRepository;
+	private UsersServiceImpl userService;
 	
 	@GetMapping("/users")
 	public List<Users> getUsers(){ 
-		
-		return (List<Users>) usersRepository.findAll();
+//		
+//		return (List<Users>) usersRepository.findAll();
+//
+		return userService.findAll();
 		
 	}
 	
-	@PostMapping("/addUser")
-	void addUser(@RequestBody Users user) {
+	@PostMapping("/users/addUser")
+	public void addUser(@RequestBody Users user) {
 		
-		usersRepository.save(user);
-		
+//		usersRepository.save(user);
+//		
+		userService.createUser(user);
 		
 	}
 	
