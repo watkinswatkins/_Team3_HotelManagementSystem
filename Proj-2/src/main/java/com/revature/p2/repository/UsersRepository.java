@@ -8,6 +8,6 @@ import com.revature.p2.model.Users;
 @Repository
 public interface UsersRepository extends JpaRepository<Users, Integer> {
 	
-	
+	public Users getUserByUsernameAndPassword(String username, String Password);
 	
 }

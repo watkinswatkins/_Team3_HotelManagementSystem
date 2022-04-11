@@ -20,6 +20,12 @@ public class UsersServiceImpl {
 //		
 //	}
 	
+	public Users userLogin(String username, String password) {
+		
+		return usersService.getUserByUsernameAndPassword(username, password);
+		
+	}
+	
 	public List<Users> findAll() {
 		
 		return usersService.findAll();

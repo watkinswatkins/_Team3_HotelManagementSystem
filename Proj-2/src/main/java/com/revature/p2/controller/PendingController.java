@@ -19,7 +19,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 @RestController
 @CrossOrigin(origins = "https//localhost:8095")
-
 public class PendingController {
 
 	@Autowired
