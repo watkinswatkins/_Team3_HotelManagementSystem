@@ -7,12 +7,18 @@ import { AppComponent } from './app.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { UserFormComponent } from './user-form/user-form.component';
 import { UserService } from './user-service.service';
+import { InmateListComponent } from './inmate-list/inmate-list.component';
+import { InmateSearchComponent } from './inmate-search/inmate-search.component';
+import { InmateUpdateComponent } from './inmate-update/inmate-update.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UserListComponent,
-    UserFormComponent
+    UserFormComponent,
+    InmateListComponent,
+    InmateSearchComponent,
+    InmateUpdateComponent
   ],
   imports: [
     BrowserModule,
