@@ -1,0 +1,84 @@
+<div class="card my-5">
+    <div class="card-body">
+      <form (ngSubmit)="onSubmit()" #userForm="ngForm">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" [(ngModel)]="user.username" 
+            class="form-control" 
+            id="name" 
+            name="name" 
+            placeholder="Enter your name"
+            required #name="ngModel">
+        </div>
+        <div [hidden]="!name.pristine" class="alert alert-danger">Username is required</div>
+        
+        <div class="PasswordBody">
+            <form (ngSubmit)="onSubmit()" #userForm="ngForm"></form>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" [(ngModel)]="user.password"
+                class="form-control"
+                id="password"
+                name="password"
+                placeholder="Enter your password"
+                required #name="ngModel">
+            </div>
+            <div [hidden]="!name.pristine" class="alert alert-danger">Password is required</div>
+        </div>
+        <div class="FirstName">
+            <form (ngSubmit)="onSubmit()" #userForm="ngForm"></form>
+            <div class="form-group">
+                <label for="firstName">First Name</label>
+                <input type="text" [(ngModel)]="user.firstName"
+                class="form-control"
+                id="firstName"
+                name="firstName"
+                placeholder="Enter your first name"
+                required #name="ngModel">
+            </div>
+            <!-- <div [hidden]="!name.pristine" class="alert alert-danger">Password is required</div> -->
+        </div>
+        <div class="LastName">
+            <form (ngSubmit)="onSubmit()" #userForm="ngForm"></form>
+            <div class="form-group">
+                <label for="lastName">Last Name</label>
+                <input type="text" [(ngModel)]="user.lastName"
+                class="form-control"
+                id="lastName"
+                name="lastName"
+                placeholder="Enter your last name"
+                required #name="ngModel">
+            </div>
+            <!-- <div [hidden]="!name.pristine" class="alert alert-danger">Password is required</div> -->
+        </div>
+
+        <div class="Role">
+            <form (ngSubmit)="onSubmit()" #userForm="ngForm"></form>
+            <div class="form-group">
+                <label for="role">Role</label>
+                <select class="form-select" name="Role" [(ngModel)]="user.role">
+                    <option value="" disabled selected>Select Role</option>
+                    <option value="Guard">Guard</option>
+                    <option value="Warden">Warden</option>
+                </select>
+                
+            </div>
+            <div [hidden]="!name.pristine" class="alert alert-danger">Role is required</div> 
+        </div>
+
+
+        <!-- <div class="form-group">
+          <label for="email">Email</label>
+          <input type="text" [(ngModel)]="user.email" 
+            class="form-control" 
+            id="email" 
+            name="email" 
+            placeholder="Enter your email address"
+            required #email="ngModel">
+          <div [hidden]="!email.pristine" class="alert alert-danger">Email is required</div> 
+        </div> -->
+        <button type="submit" [disabled]="!userForm.form.valid" 
+          class="btn btn-info">Submit</button>
+      </form>
+    </div>
+  </div>
