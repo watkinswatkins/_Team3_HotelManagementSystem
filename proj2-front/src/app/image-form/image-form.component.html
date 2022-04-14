@@ -1,0 +1,50 @@
+<!-- <div class="card my-5">
+    <div class="card-body">
+      <form (ngSubmit)="uploadImage()" #imageForm="ngForm">
+        <div class="form-group">
+          <label for="name">Image Name</label>
+          <input type="text" [(ngModel)]="image.name" 
+            class="form-control" 
+            id="name" 
+            name="name" 
+            placeholder="Enter a name for the image"
+            required #name="ngModel">
+        </div>
+         <div [hidden]="!name.pristine" class="alert alert-danger">Username is required</div> -->
+        
+        <!-- <div class="">
+            <form (ngSubmit)="onLogin()" #userForm="ngForm"></form>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" [(ngModel)]="login.password"
+                class="form-control"
+                id="password"
+                name="password"
+                placeholder="Enter your password"
+                required #name="ngModel">
+            </div>
+            <div [hidden]="!name.pristine" class="alert alert-danger">Password is required</div>
+        </div> 
+
+        <div class="imageDrop"> 
+            <div class="imageBody">
+                <form (ngSubmit)="uploadImage()" #imageForm="ngForm">
+                    <div class="form-group">
+                        
+                        <ngx-dropzone (change)="onSelect($event)">
+                            <ngx-dropzone-label>Image Drop</ngx-dropzone-label>
+                            <ngx-dropzone-preview *ngFor="let f of files" [removable]="true" (removed)="onRemove(f)">
+                              <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
+                            </ngx-dropzone-preview>
+                          </ngx-dropzone>
+
+                    </div>
+
+                </form>
+            </div>
+
+        </div>
+
+        <button type="submit" [disabled]="!userForm.form.valid" 
+        class="btn btn-info">Submit</button>
+    </form> -->
