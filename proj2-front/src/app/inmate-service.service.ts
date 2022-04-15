@@ -29,16 +29,16 @@ export class InmateServiceService {
   }
 
   public findById(id: number) {
-     return this.http.get<Inmate>(this.inmatesUrl + id)
+     return this.http.get<Inmate>(`${this.inmatesUrl}/${id}`)
   
    }
 
  public fingByRoom(room: number){
-  return this.http.get<Inmate>(this.roomInmatesUrl+room);
+  return this.http.get<Inmate>(`${this.roomInmatesUrl}/${room}`);
  }
 
   public deleteInmate(id: number) {
-  return this.http.delete<Inmate>(this.inmatesUrl + id)
+  return this.http.delete<Inmate>(`${this.inmatesUrl}/${id}`)
   
    }
 }

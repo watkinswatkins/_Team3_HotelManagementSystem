@@ -12,6 +12,8 @@ import { InmateFormComponent } from './inmate-form/inmate-form.component';
 import { LoginServiceService } from './login-service.service';
 //import { ImageFormComponent } from './image-form/image-form.component';
 import { InmateServiceService } from './inmate-service.service';
+import { BlockComponent } from './block/block.component';
+import { PendingComponent } from './pending/pending.component';
 //import { ImageServiceService } from './image-service.service';
 
 
@@ -22,6 +24,8 @@ import { InmateServiceService } from './inmate-service.service';
     UserFormComponent,
     LoginFormComponent,
     InmateFormComponent,
+    BlockComponent,
+    PendingComponent,
 //    ImageFormComponent,
 
   ],
